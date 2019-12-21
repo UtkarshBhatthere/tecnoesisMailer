@@ -1,0 +1,6 @@
+{
+    "Mail Server": "Zoho Mail",
+    "Protocol":    "SMTP-SSL",
+    "Port":        465,
+    "ProvidorUrl": "smtp.zoho.in"
+}
