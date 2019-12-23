@@ -20,13 +20,14 @@ def prepare_attachment(filepath : str):
     part.add_header('Content-Transfer-Encoding', 'base64')
     return part
 
-def prepare_draft(config : json, body : str, attachment_path : str):
+def prepare_draft(config : json, body : str, attachments : list):
 
     message = MIMEMultipart()
-    message['To']      = config['receiver']
+    # message['To']      = config['receiver']
     message['From']    = config['sender']
     message['Subject'] = config['subject']
-    message['Bcc']     = config['bcc']
+    # message['Bcc']     = config['bcc']
     message.attach(MIMEText(body, "plain"))
-    message.attach(prepare_attachment(attachment_path))
+    for attachment in attachments:
+        message.attach(prepare_attachment(attachment))
     return message
