@@ -8,7 +8,6 @@ import json
 def prepare_attachment(filepath : str):
     # Extracting filename.
     filename = filepath.split('/')[-1]
-    print(filename)
     # Reading Attachment File.
     with open(filepath, "rb") as attachment_file:
         part = MIMEBase("application", "octet-stream")
@@ -27,7 +26,7 @@ def prepare_draft(config : json, body : str, attachments : list):
     message['From']    = config['sender']
     message['Subject'] = config['subject']
     # message['Bcc']     = config['bcc']
-    message.attach(MIMEText(body, "plain"))
+    message.attach(MIMEText(body, "html"))
     for attachment in attachments:
         message.attach(prepare_attachment(attachment))
     return message

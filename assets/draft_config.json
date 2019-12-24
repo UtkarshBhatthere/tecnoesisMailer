@@ -1,4 +1,4 @@
 {                                          
-    "sender" : "connect@tecnoesis.org",
-    "subject":"Tecnoesis 2020 | Test Mail"
+    "sender" : "Sender Mail Address here.",
+    "subject": "Mail Body here."
 }
